@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Factory</title>
+</head>
+<body>
+    <h1>Factory</h1>
+    <form method="POST" action="/create">
+        <div>
+            <label for="napiecie">Napięcie</label>
+            <input type="number" name="napiecie" id="napiecie"><br>
+            <label for="natezenie">Natężenie</label>
+            <input type="number" name="natezenie" id="natezenie"><br>
+            <p>Co wyprodukować?</p>
+            <label for="zarowka">Żarówka</label>
+            <input type="radio" name="createType" id="zarowka" value="zarowka">
+            <br>
+            <label for="grzejnik">Grzejnik</label>
+            <input type="radio" name="createType" id="grzejnik" value="grzejnik">
+            <br>
+            <label for="silnik">Silnik</label>
+            <input type="radio" name="createType" id="silnik" value="silnik">
+            <button>STWÓRZ</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="234.0" prefWidth="300.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example.kalkulator_wielomianow.KalkulatorController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label prefHeight="37.0" prefWidth="309.0" text="Program obliczania miejsc zerwoych funkcji kwadratowej" textFill="#0f19e4" />
+    <TextField fx:id="poleA" promptText="podaj a" />
+    <TextField fx:id="poleB" promptText="podaj b" />
+    <TextField fx:id="poleC" promptText="podaj c" />
+
+    <Label fx:id="labelWynik" prefHeight="53.0" prefWidth="297.0" textAlignment="CENTER" textFill="#ef0a0a" />
+    <Button onAction="#oblicz" text="Oblicz" textAlignment="CENTER" textFill="#d21313">
+        <font>
+            <Font size="25.0" />
+        </font></Button>
+</VBox>

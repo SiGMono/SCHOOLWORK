@@ -11,11 +11,14 @@ int main(){
 
     //  Zmienna reszta która działa jako aktualny stan reszty do wydania
     //  i aktualnyNominal który oznajmia aktualny nominał w tabeli nominaly.
-    int reszta, aktualnyNominal = 0;
+    int reszta, resztazloty, resztagrosz, aktualnyNominal = 0;
 
     //  Pobieranie reszty (w tym wypadku wpisana ręcznie)
-    cout << "Reszta: " << endl;
-    cin >> reszta;
+    cout << "Reszta zlotych: " << endl;
+    cin >> resztazloty;
+
+    cout << "Reszta groszy:" <<endl;
+    cin >> resztagrosz;
 
     //  Wypisywanie reszty poprzez algorytm zachłanny np. 1220 -> 720 (1 = 500) -> 220 (2 = 500) -> 120 (2 = 500, 1 = 100) -> 20 (2 = 500, 2= 100) -> 10 (2 = 500, 2= 100, 1 = 10) -> (2 = 500, 2= 100, 2 = 10)
     while(reszta > 0){

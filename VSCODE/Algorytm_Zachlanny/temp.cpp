@@ -4,9 +4,10 @@ using namespace std;
 
 int main(){
     //  Wartości banknotów i monet PLN wraz z groszami zwiększone o x100 aby nie korzystać z wartości zmiennoprzecinkowych
-    short nominaly[12] = {50000,20000,10000,5000,2000,1000,500,200,100,50,20,10};
-
-
+    int nominaly[12] = {50000,20000,10000,5000,2000,1000,500,200,100,50,20,10};
+    
+    //  Ten licznik[] istnieje aby zliczaj wszystkie banknoty i monety które zostały wydane
+    int licznik[12] = {0};
 
     //  Zmienna reszta która działa jako aktualny stan reszty do wydania
     //  i aktualnyNominal który oznajmia aktualny nominał w tabeli nominaly.

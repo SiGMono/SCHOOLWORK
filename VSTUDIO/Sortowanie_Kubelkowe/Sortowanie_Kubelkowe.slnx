@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Sortowanie_Kubelkowe/Sortowanie_Kubelkowe.vcxproj" />
+  <Project Path="Sortowanie_Kubelkowe/Sortowanie_Kubelkowe.vcxproj" Id="4cac173d-ff25-4cb8-b286-3acff330a038" />
 </Solution>

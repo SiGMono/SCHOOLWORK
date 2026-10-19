@@ -71,7 +71,7 @@ int main(){
             //  To porównanie istnieje aby nie pokazywać wartości pieniężnych, które nie są do wydania (0 do wydania)
             if(licznik[aktualnyNominal] != 0){
                 //  Porównanie do wyodrębniania złotówek od groszy bez potrzeby tworzenia osobnej pętli dla groszy
-                if(aktualnyNominal < 9){
+                if(nominaly[aktualnyNominal] > 99){
                     cout << "Zloty: " << nominaly[aktualnyNominal] / 100 << " Ilosc: " << licznik[aktualnyNominal] <<endl;
                 }else{
                     cout << "Grosz: " << nominaly[aktualnyNominal] << " Ilosc: " << licznik[aktualnyNominal] <<endl;

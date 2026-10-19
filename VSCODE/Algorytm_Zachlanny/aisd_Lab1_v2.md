@@ -14,10 +14,10 @@
 
 | Pole | Wartość |
 | --- | --- |
-| Imię i nazwisko | ........................................................ |
-| Numer albumu | ........................................................ |
-| Kierunek / specjalność | Informatyka / informatyka w przedsiębiorstwie. |
-| Rok/Semestr | II/III |
+| Imię i nazwisko | Szymon Zeller |
+| Numer albumu | 10149 |
+| Kierunek / specjalność | Informatyka |
+| Rok/Semestr | II |
 | Grupa laboratoryjna | grupa 1 |
 | Rok akademicki | 2026/2027 |
 | Prowadzący | mgr inż. Artur Pelo |
@@ -28,10 +28,10 @@
 | --- | --- |
 | Numer laboratorium | 1 |
 | Temat laboratorium | Algorytmy i struktury danych |
-| Data realizacji |.......... |
+| Data realizacji | 19.10.2026 |
 | Data oddania | +7d |
-| Język / technologia | C / CPP / JAVA |
-| Środowisko / narzędzie | VS / VSC / CLion / IntelliJ |
+| Język / technologia | CPP |
+| Środowisko / narzędzie | VSC |
 
 ## ![Piktogram tresc zadania](https://img.icons8.com/color/48/task.png) Treść zadania
 

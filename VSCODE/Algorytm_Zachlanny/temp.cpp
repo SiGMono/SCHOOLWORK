@@ -62,25 +62,13 @@ int main(){
     reszta = resztazloty*100 + resztagrosz;
 
     //  Wypisywanie reszty poprzez algorytm zachłanny np. 1220 -> 720 (1 = 500) -> 220 (2 = 500) -> 120 (2 = 500, 1 = 100) -> 20 (2 = 500, 2= 100) -> 10 (2 = 500, 2= 100, 1 = 10) -> (2 = 500, 2= 100, 2 = 10)
-    //  Ta pętla jest while true zamykana poprzez porówanie if(reszta <= 0) istnieje w taki sposób ze względu na wypisywanie ostatniej wartości i ilości groszów. 
-    while(true){
+    while(reszta <= 0){
         if(reszta >= nominaly[aktualnyNominal]){
             licznik[aktualnyNominal]++;
             reszta -= nominaly[aktualnyNominal];
         }else{
-            //  To porównanie istnieje aby nie pokazywać wartości pieniężnych, które nie są do wydania (0 do wydania)
-            if(licznik[aktualnyNominal] != 0){
-                //  Porównanie do wyodrębniania złotówek od groszy bez potrzeby tworzenia osobnej pętli dla groszy
-                if(nominaly[aktualnyNominal] > 99){
-                    cout << "Zloty: " << nominaly[aktualnyNominal] / 100 << " Ilosc: " << licznik[aktualnyNominal] <<endl;
-                }else{
-                    cout << "Grosz: " << nominaly[aktualnyNominal] << " Ilosc: " << licznik[aktualnyNominal] <<endl;
-                }
-            }
             aktualnyNominal++;
         }
-        //  Porownanie zakończeniowe
-        if(reszta <= 0){break;}
     }
 
     cout << "Reszta wydana." << endl;

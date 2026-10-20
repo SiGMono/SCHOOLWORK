@@ -64,7 +64,7 @@ Opis implementacji:
 
 CPP
 ```cpp
-    #include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -100,6 +100,16 @@ int main(){
         cout << "Wykryto wartosc nienumeryczna, zamykanie programu...";
         return 0;
     }
+    //  Sprawdzanie czy nie ma wartosci zbyt duzych
+    if(resztazlotyS.length() > 9){
+        cout << "Wprowadzona wartosc jest zbyt duza, zamykanie programu...";
+        return 0;
+    }
+    //  Sprawdzanie czy wartość jest pusta
+    if(resztazlotyS.empty()){
+        cout << "Wprowadzona wartosc jest pusta, zamykanie programu...";
+        return 0;
+    }
     //  Konwersja string do int
     resztazloty = stoi(resztazlotyS);
 
@@ -107,8 +117,16 @@ int main(){
     cout << "Reszta groszy:" <<endl;
     cin >> resztagroszS;
     //  Sprawdzanie czy nie ma wartosci nienymerycznych
-    if(!is_digits(resztazlotyS)){
+    if(!is_digits(resztagroszS)){
         cout << "Wykryto wartosc nienumeryczna, zamykanie programu...";
+        return 0;
+    }
+    if(resztagroszS.length() > 2){
+        cout << "Wprowadzona wartosc jest zbyt duza, zamykanie programu...";
+        return 0;
+    }
+    if(resztagroszS.empty()){
+        cout << "Wprowadzona wartosc jest pusta, zamykanie programu...";
         return 0;
     }
     //  Konwersja string do int

@@ -62,7 +62,7 @@ int main(){
     reszta = resztazloty*100 + resztagrosz;
 
     //  Wypisywanie reszty poprzez algorytm zachłanny np. 1220 -> 720 (1 = 500) -> 220 (2 = 500) -> 120 (2 = 500, 1 = 100) -> 20 (2 = 500, 2= 100) -> 10 (2 = 500, 2= 100, 1 = 10) -> (2 = 500, 2= 100, 2 = 10)
-    while(reszta <= 0){
+    while(reszta > 0){
         if(reszta >= nominaly[aktualnyNominal]){
             licznik[aktualnyNominal]++;
             reszta -= nominaly[aktualnyNominal];
@@ -71,7 +71,21 @@ int main(){
         }
     }
 
-    cout << "Reszta wydana." << endl;
+    //  Cout dla oddzielenia w cmd/terminal
+    cout<<endl;
+
+    //  Wyświetlanie rozdzielonej reszty
+    for(int i = 0; i < 15; i++){
+        if(licznik[i] != 0){
+            if(i < 9){
+                cout << "Zloty: " << nominaly[i] / 100 << " Ilosc: " << licznik[i] <<endl;
+            }else{
+                cout << "Grosz: " << nominaly[i] << " Ilosc: " << licznik[i] <<endl;
+            }
+        }
+    }
+
+    cout << "\nReszta wydana." << endl;
 
     return 0;
 }

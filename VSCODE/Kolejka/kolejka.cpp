@@ -39,4 +39,34 @@ class StudentsQueue{
         bool isEmpty(){
             return queue.empty();
         }
+        string getJSON(){
+            string json = "[";
+            for(int i = 0; i < queue.size(); i++){
+                json += "{";
+                json += "\"name\":\"" + queue[i].getName() + "\",";
+                json += "\"age\":" + to_string(queue[i].getAge());
+                json += "}";
+                if(i != queue.size() - 1){
+                    json += ",";
+                }
+            }
+            json += "]";
+            return json;
+        }
 };
+
+int main(){
+    StudentsQueue queue;
+    queue.enqueue(Student("John", 20));
+    queue.enqueue(Student("Jane", 22));
+    queue.enqueue(Student("Bob", 19));
+
+    cout << "Queue in JSON format: " << queue.getJSON() << endl;
+
+    while(!queue.isEmpty()){
+        Student student = queue.dequeue();
+        cout << "Dequeued student: " << student.getName() << ", Age: " << student.getAge() << endl;
+    }
+
+    return 0;
+}

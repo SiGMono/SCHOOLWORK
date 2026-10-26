@@ -18,6 +18,25 @@ class Student{
         }
         int getAge(){
             return age;
+        }  
+};
+
+class StudentsQueue{
+    private:
+        vector<Student> queue;
+    public:
+        void enqueue(Student student){
+            queue.push_back(student);
         }
-        
+        Student dequeue(){
+            if(queue.empty()){
+                throw runtime_error("Queue is empty");
+            }
+            Student student = queue.front();
+            queue.erase(queue.begin());
+            return student;
+        }
+        bool isEmpty(){
+            return queue.empty();
+        }
 };

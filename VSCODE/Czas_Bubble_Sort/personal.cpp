@@ -9,9 +9,6 @@ using namespace std;
 void bubbleSort(vector<int>& v) {
     int n = v.size();
 
-    //  Starting time for sorting algorithm
-    auto start = chrono::high_resolution_clock::now();
-
     // Outer loop that corresponds to the number of
     // elements to be sorted
     for (int i = 0; i < n - 1; i++) {
@@ -27,11 +24,6 @@ void bubbleSort(vector<int>& v) {
                 swap(v[j], v[j + 1]);
         }
     }
-    //  Ending time for sorting algorithm and displaying it in miliseconds
-    auto end = chrono::high_resolution_clock::now();
-    auto dur = end - start;
-    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
-    cout << "Algorytm sortowania babelkowego zajal: " << ms << " milisekund."<<endl;
 }
 
 int main(int argc, char const *argv[])
@@ -52,20 +44,35 @@ int main(int argc, char const *argv[])
         numbersArray.push_back(dist100000(rng));
     }
 
+/*
     //  Display unsorted data
     cout << "Unsorted: " <<endl;
     for(auto v : numbersArray){
         cout << v << endl;
     }
+*/
+    //  Starting time for sorting algorithm
+    auto start = chrono::high_resolution_clock::now();
 
     //  Call to sort function
     bubbleSort(numbersArray);
+
+    //  Ending time for sorting algorithm
+    auto end = chrono::high_resolution_clock::now();
+    auto dur = end - start;
+    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(dur).count();
 
     //  Display sorted data
     cout << "Sorted: " <<endl;
     for(auto v : numbersArray){
         cout << v << endl;
     }
+    
+    cout << "Algorytm sortowania babelkowego zajal: " << ms << " milisekund."<<endl;
+    cout << "Zlozonosc obliczleniowa optymistyczna to O(n)." << endl;
+    cout << "Zlozonosc obliczleniowa srednia to O((n^2)/2)." << endl;
+    cout << "Zlozonosc obliczleniowa pesymistyczna to O((n^2)/2)." << endl;
+    cout << "Zlozonosc pamieciowa to O(1)" << endl;
 
     return 0;
 }

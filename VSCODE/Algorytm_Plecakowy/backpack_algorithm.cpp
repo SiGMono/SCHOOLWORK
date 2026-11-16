@@ -66,5 +66,28 @@ int main(){
 
     sort(items.begin(), items.end(), sortingFunctor());
 
+    cout << "Maximum bag weight: ";
+    string bagWeight;
+    while(true){
+        if(is_digits(bagWeight)){
+            int bagWeightInt = stoi(bagWeight);
+            for(auto v : items){
+                
+            }
+            break;
+        }else{
+            cout << "Bad input, please try again."
+        }
+    }
+
+    while(reszta > 0){
+        if(reszta >= nominaly[aktualnyNominal]){
+            licznik[aktualnyNominal]++;
+            reszta -= nominaly[aktualnyNominal];
+        }else{
+            aktualnyNominal++;
+        }
+    }
+
     return 0;
 }

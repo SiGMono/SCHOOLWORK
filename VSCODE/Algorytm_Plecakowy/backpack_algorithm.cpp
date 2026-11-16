@@ -23,7 +23,7 @@ struct Item{
 struct sortingFunctor{
     bool operator()(const Item& x, const Item& y) const
     {
-        return x.value / x.weight < y.value / y.weight; 
+        return (x.value / x.weight) < (y.value / y.weight); 
     }
 };
 
@@ -32,10 +32,11 @@ int main(){
     vector<Item> items;
 
     do{
-        cout << "1 - Add item \n 2 - Calculate optimal backpack" <<endl;
+        cout << "1 - Add item" <<endl;
+        cout << "2 - Calculate optimal backpack" <<endl;
         string choice = "MTY";
         cin >> choice;
-        if(is_digits(choice) && choice.compare("1")){
+        if(choice == "1"){
             Item thisItem;
             while(true){
                 string name, value, weight;
@@ -46,7 +47,7 @@ int main(){
                 cout << "weight: ";
                 cin >> weight;
 
-                if(is_digits(value) && is_digits(weight)){
+                if(is_digits(value) == true && is_digits(weight) == true){
                     thisItem.name = name;
                     thisItem.value = stoi(value);
                     thisItem.value = stoi(weight);
@@ -56,7 +57,7 @@ int main(){
                     cout << "Bad input, please try again." <<endl;
                 }
             }
-        }else if(is_digits(choice) && choice.compare("2")){
+        }else if(choice == "2"){
             break;
         }else{
             cout << "Bad input, try again." <<endl;
@@ -69,23 +70,39 @@ int main(){
     cout << "Maximum bag weight: ";
     string bagWeight;
     while(true){
+        cin >> bagWeight;
         if(is_digits(bagWeight)){
             int bagWeightInt = stoi(bagWeight);
-            for(auto v : items){
-                
+            int begginingPoint; //  A point of beggining for a binary division optimisation
+            //  The optimisation of the point at which to begin filling the backpack
+            //  In case of small items vector sizes the difference in computing time is negligible but assuming items is going to number in thousands
+            //  this piece of code can potencially cut the backpack filling time significantly (this works due to the fact this vector is already sorted)
+            do{
+                int mid = 0;
+                if(items[mid].weight > bagWeightInt){
+                    break;
+                }else{
+                    begginingPoint = mid;
+                }
+                if(items.size()%2 == 0){
+                    mid = (items.size() - mid) / 2 + 1;
+                }else{
+                    mid = (items.size() - mid) / 2;
+                }     
+            }while(true);
+
+            for(int i = begginingPoint; i < items.size(); i++){
+                int count = 0;
+                while(items[i].weight < bagWeightInt){
+                    bagWeightInt -= items[i].weight;
+                    count++;
+                }
+                cout << count << " of " << items[i].name <<endl;
+                count = 0;
             }
             break;
         }else{
-            cout << "Bad input, please try again."
-        }
-    }
-
-    while(reszta > 0){
-        if(reszta >= nominaly[aktualnyNominal]){
-            licznik[aktualnyNominal]++;
-            reszta -= nominaly[aktualnyNominal];
-        }else{
-            aktualnyNominal++;
+            cout << "Bad input, please try again." <<endl;
         }
     }
 

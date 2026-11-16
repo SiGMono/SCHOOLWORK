@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -17,6 +18,13 @@ bool is_digits(string& str)
 struct Item{
     string name;
     int value, weight;
+};
+
+struct sortingFunctor{
+    bool operator()(const Item& x, const Item& y) const
+    {
+        return x.value / x.weight < y.value / y.weight; 
+    }
 };
 
 //  Backpack algorithm with infinite item amounts
@@ -56,7 +64,7 @@ int main(){
     }
     while(true);
 
+    sort(items.begin(), items.end(), sortingFunctor());
 
-    
     return 0;
 }

@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int fib(int n) {
+
+	// If n is 1 or 0, then return n, 
+  	// works for 0th and 1st terms
+    if (n < 2)
+        return 1;
+
+    // Recurrence relation to find 
+  	// the rest of the terms
+    return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    int n = 0;
+    cout << "Which Fibonacci numebr do you want?: ";
+    cin >> n;
+
+  	// Finding nth term
+    cout << fib(n);
+    return 0;
+}
